@@ -9,28 +9,22 @@ router.get('/celebrities', (req, res) => {
   })
 })
 
-/*
-router.post('/books', (req, res) => {
-  console.log(req.body);
-  const title = req.body.title;
-  const author = req.body.author;
-  const description = req.body.description;
-  const rating = req.body.rating;
-  // const { title, author, decription, rating } = req.body; 
-  console.log(title, author, description, rating);
-  Book.create({
-    title: title,
-    author: author,
-    description: description,
-    rating: rating
+router.post('/celebrities', (req, res) => {
+  console.log(req.body); 
+  Celebrity.create({
+    name: req.body.name,
+    occupation: req.body.occupation,
+    catchPhrase: req.body.catchPhrase,
   })
-    .then(book => {
-      console.log('this book was just created: ', book);
-      res.redirect(`/books/${book._id}`)
-      // res.render('bookDetails', { bookDetails: book });
+    .then(celebrity => {
+      console.log('this celebrity was just created: ', celebrity);
+      res.redirect(`/celebrities/${celebrity._id}`)
     })
 })
-*/
+
+router.get('/celebrities/new', (req, res) => {
+  res.render('celebrities/new')
+})
 
 router.get('/celebrities/:id', (req, res) => {
   const celebId = req.params.id;
@@ -41,8 +35,7 @@ router.get('/celebrities/:id', (req, res) => {
     })
 })
 
-router.get('/celebrities/new', (req, res) => {
-  res.render('celebrities/new')
-})
+
+
 
 module.exports = router;

@@ -1,13 +1,15 @@
 <h2>New Celebrity</h2>
 
 <form action="/celebrities" method="POST">
-  <label for="name">Title: </label>
+  <label for="name">Name: </label>
   <input type="text" name="name" id="name">
 
-  <label for="occupation">Author: </label>
+  <label for="occupation">Occupation: </label>
   <input type="text" name="occupation" id="occupation">
 
-  <label for="catchPhrase">Description: </label>
+  <label for="catchPhrase">catchPhrase: </label>
   <input type="text" name="catchPhrase" id="catchPhrase">
-  <button type="submit">Add a book</button>
+  <button type="submit">Save celebrity to the database</button>
 </form>
+
+<a href="/celebrities">To the celebrities!</a>
