@@ -1,12 +1,12 @@
 <h2>Movies</h2>
 
-{{#each celebs}}
+{{#each movies}}
     <p><a href="/celebrities/{{_id}}">{{name}}</a></p>
     <form action="/celebrities/{{_id}}/delete" method="POST">
     <button type="submit">Delete</button>
     </form>
 {{/each}}
 
-<p><a href="/celebrities/new">Create a new celebrity profile</a></p>
+<p><a href="/movies/new">Create a new movie</a></p>
 
 <a href="/">Home</a>
