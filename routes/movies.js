@@ -15,6 +15,7 @@ router.post('/', (req, res) => {
     title: req.body.title,
     genre: req.body.genre,
     plot: req.body.plot,
+    cast: req.body.celebrity
   })
     .then(movie => {
       console.log('this movie was just created: ', movie);

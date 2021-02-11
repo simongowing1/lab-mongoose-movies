@@ -43,11 +43,11 @@ router.post('/:id', (req, res) => {
     occupation,
     catchPhrase
   })
-    .then(celebrity => {
+    .then(() => {
       res.redirect('/celebrities');
     })
     .catch(err => {
-      console.log(err);
+      next(err);
     })
 })
 
@@ -66,7 +66,7 @@ router.get('/:id/edit', (req, res) => {
   const celebId = req.params.id;
   Celebrity.findById(celebId)
     .then(celebritiesDB => {
-      console.log(celebritiesDB);
+      //console.log(celebritiesDB);
      res.render('celebrities/edit', { celebrity: celebritiesDB });
     }).catch(err => {
       next(err)
